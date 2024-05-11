@@ -2,7 +2,7 @@
 
 ```yaml
 project:
-  name: zerops-hello-world-nodejs
+  name: zerops-nodejs
   tags:
     - zerops
     - hello-worlds
@@ -13,9 +13,9 @@ services:
     envSecrets:
       DB_HOST: db
       DB_NAME: db
-      DB_PASS: ${db_password}
+      DB_PASS: \${db_password}
       DB_PORT: "5432"
-      DB_USER: ${db_user}
+      DB_USER: \${db_user}
       NODE_ENV: production
     ports:
       - port: 3000
