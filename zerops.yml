@@ -16,6 +16,8 @@ zerops:
         - ./package.json
     run:
       start: npm run start:prod
+      prepareCommands:
+        - echo "hello"
       healthCheck:
         httpGet:
           port: 3000
