@@ -2,6 +2,8 @@ zerops:
   - setup: nodejs20
     build:
       base: nodejs@20
+      envVariables:
+        FOO: asdf          
       prepareCommands:
         - npm install -g typescript
       buildCommands:
@@ -15,6 +17,8 @@ zerops:
         - ./node_modules
         - ./package.json
     run:
+      envVariables:
+        FOO: asdf    
       start: npm run start:prod
       prepareCommands:
         - echo "hello"
@@ -22,3 +26,5 @@ zerops:
         httpGet:
           port: 3000
           path: /status
+    envVariables:
+      ROOTFOO: asdf
