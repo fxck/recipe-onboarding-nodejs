@@ -7,12 +7,9 @@ zerops:
       prepareCommands:
         - npm install -g typescript
       buildCommands:
-        - |
-          echo $FOO
-          cd nodejs
-          export NODE_ENV=development
-          npm i
-          npm run build
+        - echo "env ${FOO}"
+        - npm i
+        - npm run build
       deploy:
         - ./dist
         - ./node_modules
