@@ -3,11 +3,12 @@ zerops:
     build:
       base: nodejs@20
       envVariables:
-        FOO: asdf          
+        FOO: asdfbuild          
       prepareCommands:
         - npm install -g typescript
       buildCommands:
         - |
+          echo $FOO
           cd nodejs
           export NODE_ENV=development
           npm i
@@ -18,7 +19,7 @@ zerops:
         - ./package.json
     run:
       envVariables:
-        FOO: asdf    
+        FOO: asdfruntime    
       start: npm run start:prod
       prepareCommands:
         - echo "hello"
