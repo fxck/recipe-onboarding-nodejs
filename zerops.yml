@@ -1,5 +1,5 @@
 zerops:
-  - setup: nodejs20adasd
+  - setup: nodejs20
     build:
       base: nodejs@20
       envVariables:
@@ -8,6 +8,7 @@ zerops:
         - npm install -g typescript
       buildCommands:
         - echo "env ${FOO}"
+        - exit 1
         - npm i
         - npm run build
       deploy:
